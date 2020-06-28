@@ -1,51 +1,394 @@
-.attribution {
-  font-size: 11px;
+:root {
+  --primary-soft-blue: hsl(231, 69%, 60%);
+  --primary-soft-red: hsl(0, 94%, 66%);
+  --neutral-grayish-blue: hsl(229, 8%, 60%);
+  --neutral-dark-blue: hsl(229, 31%, 21%);
+}
+
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: var(--neutral-grayish-blue);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--neutral-dark-blue);
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-soft-red);
+}
+
+.strong {
+  font-weight: 500;
+  color: var(--neutral-dark-blue);
+  font-size: 1.2em;
+}
+
+p.partial-width {
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* header */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Simple Bookmark Manager */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.left {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  width: 50%;
+}
+
+.right {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+/* Features */
+
+.tab-border {
+  border-bottom: 5px solid var(--primary-soft-red);
+}
+
+.tab-bold {
+  font-weight: 500;
+  color: var(--neutral-dark-blue);
+}
+
+.tabs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+.tabs-container {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 0 0;
+  border-bottom: 1px solid gray;
 }
 
-/* # Front-end Style Guide
+.tab-content-container {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 0;
+}
 
-## Layout
+.tab-item:active {
+  color: var(--neutral-dark-blue);
+}
 
-The designs were created to the following widths:
+.tab-item {
+  padding: 2rem;
+}
 
-- Mobile: 375px
-- Desktop: 1440px
+.tab-item:hover {
+  color: var(--primary-soft-red);
+  cursor: pointer;
+}
 
-## Colors
+#tab-1-content .tab-content-inner,
+#tab-2-content .tab-content-inner,
+#tab-3-content .tab-content-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
 
-### Primary
+/* Hide content initially */
+#tab-1-content,
+#tab-2-content,
+#tab-3-content {
+  display: none;
+}
 
-- Soft Blue: hsl(231, 69%, 60%)
-- Soft Red: hsl(0, 94%, 66%)
+.show {
+  display: block !important;
+}
 
-### Neutral
+.copy {
+  text-align: left;
+}
 
-- Grayish Blue: hsl(229, 8%, 60%)
-- Very Dark Blue: hsl(229, 31%, 21%)
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem;
+}
 
-## Typography
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 1.2rem 0;
+  max-width: 280px;
+  border-radius: .5em;
+}
 
-### Body Copy
+.card:first-child {
+  margin-top: 0;
+  margin-bottom: -1rem;
+  justify-self: end;
+}
 
-- Font size: 18px
+.card:nth-child(2) {
+  margin-top: 1rem;
+  margin-bottom: -2rem;
+  justify-self: center;
+}
 
-### Fonts
+.card:nth-child(3) {
+  margin-top: 2rem;
+  margin-bottom: -3rem;
+  justify-self: start;
+}
 
-- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
-- Weights: 400, 500
+img.dots {
+  padding: 2rem 0;
+}
 
-## Icons
+/* Frequently Asked Questions */
 
-For the icons in the design, you can choose between using the icons provided or an font icon library.
+.faq {
+  padding: 10em 0 5em;
+}
 
-Some library suggestions can be found below:
+.accordion-container {
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com)
- */
+.question {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question img {
+  align-self: center;
+}
+
+.question:first-child {
+  border-top: 1px solid lightgray;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  padding: 1rem 0;
+}
+
+.question:hover {
+  cursor: pointer;
+}
+
+.panel {
+  text-align: left;
+}
+
+.panel {
+  display: none;
+}
+
+.open {
+  display: block !important;
+}
+
+/* Signup Section */
+
+.signup {
+  background: var(--primary-soft-blue);
+}
+
+.signup-container {
+  max-width: 25%;
+  padding: 5rem 0;
+  margin: 5rem auto 0;
+}
+
+.signup .strong {
+  font-size: 2em;
+}
+
+.signup-container p.caps {
+  letter-spacing: 5px;
+}
+
+::placeholder {
+  color: var(--neutral-grayish-blue);
+}
+
+input[type=email] {
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: inherit;
+  width: 60%;
+}
+
+input[type=submit] {
+  background: var(--primary-soft-red);
+  color: #fff;
+  border: 1px solid var(--primary-soft-red);
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: inherit;
+}
+
+/* Footer */
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  background: var(--neutral-dark-blue);
+}
+
+.text-white {
+  color: #fff;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+/* buttons */
+
+button {
+  border: none;
+  padding: 15px 32px;
+  font-size: inherit;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button.btn-red {
+  background: var(--primary-soft-red);
+  color: #fff;
+  border: 1px solid var(--primary-soft-red);
+}
+
+button.btn-red:hover,
+input[type=submit]:hover {
+  background: #fff;
+  color: var(--primary-soft-red);
+  border: 1px solid var(--primary-soft-red);
+  cursor: pointer;
+}
+
+button.btn-blue {
+  background: var(--primary-soft-blue);
+  color: #fff;
+  border: 1px solid var(--primary-soft-blue);
+}
+
+button.btn-blue:hover {
+  background: #fff;
+  color: var(--primary-soft-blue);
+  border: 1px solid var(--primary-soft-blue);
+}
+
+button.btn-gray:hover {
+  background: #fff;
+  color: var(--neutral-dark-blue);
+  border: 1px solid var(--neutral-dark-blue);
+}
+
+button.btn-gray {
+  background: hsl(229, 8%, 90%);
+  color: var(--neutral-dark-blue);
+  border: 1px solid hsl(229, 8%, 90%);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.menu-items a,
+.footer-items a {
+  letter-spacing: 1px;
+  padding: 0 1rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+}
+
+.attribution a {
+  color: hsl(194, 100%, 63%);
+}
+
+@media(max-width: 600px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .left,
+  .right {
+    grid-column: auto;
+    grid-row: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
