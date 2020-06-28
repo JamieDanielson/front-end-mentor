@@ -1,0 +1,173 @@
+:root {
+  --primary-desat-red: hsl(0, 36%, 70%);
+  --primary-soft-red: hsl(0, 93%, 68%);
+  --neutral-gray-red: hsl(0, 6%, 24%);
+}
+
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--primary-desat-red);
+  font-size: 16px;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+body {
+  /* background: var(--neutral-light-grey); */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+}
+
+.coming-soon {
+  grid-column: 2 / 8;
+  justify-items: center;
+  padding: 2rem 3rem 3rem 10rem;
+  margin: 3rem;
+}
+
+.desktop-photo {
+  grid-column: 8 / 13;
+  justify-self: end;
+}
+
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.pink-text {
+  color: var(--primary-desat-red);
+}
+
+.light-text {
+  font-weight: 300;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 4em;
+  letter-spacing: 10px;
+  color: var(--neutral-gray-red);
+}
+
+.logo {
+  padding-bottom: 4em;
+}
+
+p.body-text {
+  max-width: 58%;
+  padding-bottom: 2rem;
+}
+
+form {
+  display: flex;
+}
+
+::placeholder {
+  color: var(--primary-desat-red);
+}
+
+input[type=text],
+input[type=email] {
+  color: var(--primary-desat-red);
+  border: 1px solid var(--primary-desat-red);
+  border-radius: 50px;
+  padding: 1rem;
+  width: 52%;
+  font-family: inherit;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset],
+button {
+  background: url(/images/icon-arrow.svg) no-repeat center, linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border: none;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  margin-left: -12%;
+  cursor: pointer;
+  padding: 1rem 3rem;
+}
+
+.mobile-photo {
+  display: none;
+}
+
+@media(max-width: 600px) {
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .coming-soon {
+    grid-column: 1;
+    padding: 0;
+    margin: 0;
+  }
+
+  .logo {
+    grid-row: 1;
+    grid-column: 1;
+    text-align: left;
+    padding: 1.6rem;
+  }
+
+  .desktop-photo {
+    display: none;
+  }
+
+  .mobile-photo {
+    display: block;
+  }
+
+  .copy {
+    grid-row: 3;
+    grid-column: 1;
+    text-align: center;
+  }
+
+  .body-text,
+  .signup {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  form {
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  p.body-text {
+    max-width: 72%;
+    line-height: 1.5;
+  }
+
+  input[type=button],
+  input[type=submit],
+  input[type=reset],
+  button {
+    margin-left: -16%;
+    padding: 1rem 2rem;
+  }
+}
