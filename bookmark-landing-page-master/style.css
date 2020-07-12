@@ -51,6 +51,10 @@ p.partial-width {
   margin-right: auto;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* header */
 
 nav {
@@ -387,8 +391,123 @@ button.btn-gray {
   .right {
     grid-column: auto;
     grid-row: auto;
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
   }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .left p {
+    text-align: center;
+    line-height: 1.8;
+    letter-spacing: .5px;
+  }
+
+  .features {
+    padding: 6rem 0;
+  }
+
+  p.partial-width {
+    max-width: 85%;
+    line-height: 1.8;
+  }
+
+  .tabs-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .tab-item {
+    border-top: 1px solid gray;
+    padding: 1rem 3rem;
+    line-height: 1.5;
+  }
+
+  #tab-1-content .tab-content-inner,
+  #tab-2-content .tab-content-inner,
+  #tab-3-content .tab-content-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .copy {
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card:first-child {
+    justify-self: center;
+  }
+
+  .card:nth-child(3) {
+    justify-self: center;
+  }
+
+  .card {
+    padding: 5rem 0 1.2rem;
+    max-width: 100%;
+  }
+
+  .accordion-container {
+    max-width: 90%;
+  }
+
+  .faq {
+    padding-bottom: 2rem;
+  }
+
+  .faq button.btn-blue {
+    margin: 3rem;
+  }
+
+  .signup-container {
+    margin: 0 auto;
+    max-width: 90%;
+    width: 90%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type=email] {
+    margin: 1rem auto;
+    width: 90%;
+  }
+
+  .footer-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-items a {
+    padding: .8rem;
+  }
+
+  .footer-items.icons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .menu-items a {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
