@@ -1,3 +1,29 @@
+// Menu
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.mobile-nav');
+const menu = document.querySelector('.menu-items');
+const mobileLogo = document.querySelector('.mobile-logo');
+const mainLogo = document.querySelector('#main-logo');
+
+function hideOnMobile() {
+  if (window.innerWidth <= 600) {
+    menu.classList.add('none');
+    mobileLogo.classList.add('none');
+    burger.classList.remove('none');
+  }
+}
+
+hideOnMobile();
+
+burger.addEventListener('click', function (e) {
+  this.classList.toggle('is-open');
+  nav.classList.toggle('nav-open');
+  menu.classList.toggle('none');
+  menu.classList.toggle('menu-open');
+  mobileLogo.classList.toggle('none');
+  mainLogo.classList.toggle('hidden');
+});
+
 // Tabs
 const tabItems = document.querySelectorAll('.tab-item');
 const tabContentItems = document.querySelectorAll('.tab-content-item');
